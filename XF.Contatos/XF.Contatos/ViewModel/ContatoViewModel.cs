@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using XF.Contatos.Model;
+using XF.Contatos.API;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace XF.Contatos.ViewModel
 {
@@ -28,12 +31,18 @@ namespace XF.Contatos.ViewModel
 
         public void Ligar(Contato paramContato)
         {
-            // Implementar a função de ligar
+            // TODO Implementar a função de ligar
+
+            if (!string.IsNullOrWhiteSpace(paramContato.Numero))
+            {
+                var phone = DependencyService.Get<ILigar>();
+                if (phone != null) phone.Discar(paramContato.Numero);
+            }
         }
 
         public void GetDetalhe(Contato paramContato)
         {
-            // Implementar a tela que visualiza detalhes do contato
+            // TODO Implementar a tela que visualiza detalhes do contato
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
