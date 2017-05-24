@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using XF.Contatos.API;
 using XF.Contatos.Droid;
 
+[assembly: Dependency(typeof(Ligar_Android))]
 namespace XF.Contatos.Droid
 {
     public class Ligar_Android: ILigar

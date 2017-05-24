@@ -6,7 +6,10 @@
 
     <ContentPage.Content>
         <StackLayout Padding="1">
-            <ListView x:Name="lstContatos" ItemsSource="{Binding Contatos}" RowHeight="50">
+            <ListView x:Name="lstContatos" 
+                ItemsSource="{Binding Contatos}" 
+                RowHeight="50"
+                ItemTapped="lstContatos_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

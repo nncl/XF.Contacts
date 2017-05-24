@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XF.Contatos.Model;
 using XF.Contatos.ViewModel;
+using XF.Contatos.API;
 
 namespace XF.Contatos.View
 {
@@ -28,5 +29,15 @@ namespace XF.Contatos.View
             IContato lista = DependencyService.Get<IContato>();
             lista.GetMobileContacts(vm);
         }
+
+		private void lstContatos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+            Contato contact = e.SelectedItem as Contato;
+			if (!string.IsNullOrWhiteSpace(contact.Numero))
+			{
+				var phone = DependencyService.Get<ILigar>();
+				if (phone != null) phone.Discar(contact.Numero);
+            }
+		}
     }
 }
