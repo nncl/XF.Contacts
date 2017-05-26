@@ -31,8 +31,6 @@ namespace XF.Contatos.ViewModel
 
         public void Ligar(Contato paramContato)
         {
-            // TODO Implementar a função de ligar
-
             if (!string.IsNullOrWhiteSpace(paramContato.Numero))
             {
                 var phone = DependencyService.Get<ILigar>();
@@ -42,8 +40,9 @@ namespace XF.Contatos.ViewModel
 
         public void GetDetalhe(Contato paramContato)
         {
-            // TODO Implementar a tela que visualiza detalhes do contato
-        }
+			// TODO Implementar a tela que visualiza detalhes do contato
+            App.Current.MainPage.Navigation.PushAsync(new XF.Contatos.View.DetailsView(paramContato));
+		}
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void EventPropertyChanged([CallerMemberName] string propertyName = null)
@@ -93,7 +92,7 @@ namespace XF.Contatos.ViewModel
         }
         public void Execute(object parameter)
         {
-            contatoVM.GetDetalhe(parameter as Contato);
+             contatoVM.GetDetalhe(parameter as Contato);
         }
     }
 }

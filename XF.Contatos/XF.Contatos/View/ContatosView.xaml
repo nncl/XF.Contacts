@@ -16,7 +16,9 @@
                                 <MenuItem Text="Ligar" 
                                     Command="{Binding Path=BindingContext.OnLigarCMD, Source={x:Reference ContatosView}}"
                                     CommandParameter="{Binding .}"/>
-                                <MenuItem Text="Detalhes" Command="{Binding OnDetalheCMD}" />
+                                <MenuItem Text="Detalhes" 
+                                    Command="{Binding Path=BindingContext.OnDetalheCMD, Source={x:Reference ContatosView}}"
+                                    CommandParameter="{Binding .}" />
                             </ViewCell.ContextActions>
                             <StackLayout>
                                 <Label Text="{Binding DisplayName}" Style="{StaticResource LabelViewCellPai}" Margin="0,2,0,4" />

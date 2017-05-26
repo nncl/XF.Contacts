@@ -49,10 +49,18 @@
       <DependentUpon>ContatosView.xaml</DependentUpon>
     </Compile>
     <Compile Include="API\ILigar.cs" />
+    <Compile Include="View\DetailsView.xaml.cs">
+      <DependentUpon>DetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Detail.cs" />
+    <Compile Include="ViewModel\DetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
