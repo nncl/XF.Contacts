@@ -6,8 +6,17 @@
     
 	<ContentPage.Content>
 
-        <StackLayout Padding="1">
+        <StackLayout Padding="5" Spacing="10">
             <Label Text="{Binding Name}"></Label>
+
+            <Button x:Name="btnCamera" Text="Foto" 
+                    Clicked="btnCamera_Clicked" />
+            <Button x:Name="btnSelecionar" Text="Selecionar" 
+                    Clicked="btnSelecionar_Clicked" />
+
+            <StackLayout>
+                <Image x:Name="imgFoto" />
+            </StackLayout>
         </StackLayout>
 
 	</ContentPage.Content>

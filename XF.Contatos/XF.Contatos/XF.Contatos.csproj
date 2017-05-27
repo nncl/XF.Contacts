@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Model\Detail.cs" />
     <Compile Include="ViewModel\DetailViewModel.cs" />
+    <Compile Include="API\ICamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
