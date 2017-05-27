@@ -17,6 +17,11 @@
             <StackLayout>
                 <Image x:Name="imgFoto" />
             </StackLayout>
+
+            <Button x:Name="btnCoordenada" 
+                    Text="Localização" Clicked="btnCoordenada_Clicked"/>
+            <Label x:Name="lblLatitude" />
+            <Label x:Name="lblLongitude" />
         </StackLayout>
 
 	</ContentPage.Content>

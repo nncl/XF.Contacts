@@ -48,5 +48,18 @@ namespace XF.Contatos.View
 					this.imgFoto.Source = ImageSource.FromFile(image);
 				});
 		}
+
+		private void btnCoordenada_Clicked(object sender, EventArgs e)
+		{
+			ILocalizacao geolocation = DependencyService.Get<ILocalizacao>();
+			geolocation.GetCoordenada();
+
+			MessagingCenter.Subscribe<ILocalizacao, Coordenada>(this, "coordenada",
+				(objeto, geo) =>
+				{
+					lblLatitude.Text = geo.Latitude;
+					lblLongitude.Text = geo.Longitude;
+				});
+		}
     }
 }
