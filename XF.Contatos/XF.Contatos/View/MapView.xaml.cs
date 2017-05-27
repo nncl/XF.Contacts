@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms;
+using XF.Contatos.API;
 
 namespace XF.Contatos.View
 {
     public partial class MapView : ContentPage
     {
-        public MapView(Double lat, Double lng)
+        public MapView(Coordenada coord)
         {
             InitializeComponent();
 
-            BuildMap(lat, lng);
+            BuildMap(coord);
         }
 
-        public void BuildMap(Double lat, Double lng)
+        public void BuildMap(Coordenada coord)
         {
-            var position = new Position(lat, lng); // Latitude, Longitude
+            var position = new Position(Double.Parse(coord.Latitude), Double.Parse(coord.Longitude)); // Latitude, Longitude
 			var pin = new Pin
 			{
 				Type = PinType.Place,
@@ -27,7 +28,7 @@ namespace XF.Contatos.View
 
 			var map = new Map(
 			MapSpan.FromCenterAndRadius(
-					new Position(lat, lng), Distance.FromMiles(0.3)))
+                    new Position(Double.Parse(coord.Latitude), Double.Parse(coord.Longitude)), Distance.FromMiles(0.3)))
 			{
 				IsShowingUser = true,
 				HeightRequest = 100,

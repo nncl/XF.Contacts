@@ -54,26 +54,21 @@ namespace XF.Contatos.View
 			ILocalizacao geolocation = DependencyService.Get<ILocalizacao>();
 			geolocation.GetCoordenada();
 
+            this.loading.IsRunning = true;
+
 			MessagingCenter.Subscribe<ILocalizacao, Coordenada>(this, "coordenada",
 				(objeto, geo) =>
 				{
-					lblLatitude.Text = geo.Latitude;
-					lblLongitude.Text = geo.Longitude;
+                    lblLatitude.Text = geo.Latitude;
+                    lblLongitude.Text = geo.Longitude;
+                    this.loading.IsRunning = false;
+                    DisplayMap(geo);
 				});
 		}
 
-        private async void btnMap_Clicked(object sender, EventArgs e)
+        private async void DisplayMap(Coordenada coord)
         {
-			//ILocalizacao geolocation = DependencyService.Get<ILocalizacao>();
-			//geolocation.GetCoordenada();
-
-			//MessagingCenter.Subscribe<ILocalizacao, Coordenada>(this, "coordenada",
-				//(objeto, geo) =>
-				//{
-    //                Navigation.PushAsync(new MapView(Double.Parse(geo.Latitude), Double.Parse(geo.Longitude)));
-				//});
-
-            await Navigation.PushAsync(new MapView(37, -122));
+            await Navigation.PushAsync(new MapView(coord));
         }
     }
 }

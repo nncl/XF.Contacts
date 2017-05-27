@@ -20,11 +20,10 @@
 
             <Button x:Name="btnCoordenada" 
                     Text="Localização" Clicked="btnCoordenada_Clicked"/>
+
+            <ActivityIndicator Color="Red" x:Name="loading" />
             <Label x:Name="lblLatitude" />
             <Label x:Name="lblLongitude" />
-
-            <Button x:Name="btnMap" 
-                    Text="Ver Coordenadas no Mapa" Clicked="btnMap_Clicked"/>
         </StackLayout>
 
 	</ContentPage.Content>
