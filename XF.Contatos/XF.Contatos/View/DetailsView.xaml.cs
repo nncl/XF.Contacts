@@ -61,5 +61,19 @@ namespace XF.Contatos.View
 					lblLongitude.Text = geo.Longitude;
 				});
 		}
+
+        private async void btnMap_Clicked(object sender, EventArgs e)
+        {
+			//ILocalizacao geolocation = DependencyService.Get<ILocalizacao>();
+			//geolocation.GetCoordenada();
+
+			//MessagingCenter.Subscribe<ILocalizacao, Coordenada>(this, "coordenada",
+				//(objeto, geo) =>
+				//{
+    //                Navigation.PushAsync(new MapView(Double.Parse(geo.Latitude), Double.Parse(geo.Longitude)));
+				//});
+
+            await Navigation.PushAsync(new MapView(37, -122));
+        }
     }
 }

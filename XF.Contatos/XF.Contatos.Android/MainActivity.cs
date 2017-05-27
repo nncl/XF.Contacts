@@ -26,6 +26,8 @@ namespace XF.Contatos.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            Xamarin.FormsMaps.Init(this, bundle);
         }
 
 		public void CapturarFoto()

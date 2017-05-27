@@ -56,6 +56,9 @@
     <Compile Include="ViewModel\DetailViewModel.cs" />
     <Compile Include="API\ICamera.cs" />
     <Compile Include="API\ILocalizacao.cs" />
+    <Compile Include="View\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -63,6 +66,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DetailsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MapView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -82,6 +88,9 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
