@@ -17,13 +17,13 @@ namespace XF.Contatos.View
 
         public void BuildMap(Coordenada coord)
         {
-            var position = new Position(Double.Parse(coord.Latitude), Double.Parse(coord.Longitude)); // Latitude, Longitude
+            var position = new Position(Double.Parse(coord.Latitude), Double.Parse(coord.Longitude));
 			var pin = new Pin
 			{
 				Type = PinType.Place,
 				Position = position,
-				Label = "Hello",
-				Address = "This is where you are right now, bro!!"
+				Label = "custom pin",
+				Address = "custom detail info"
 			};
 
 			var map = new Map(
@@ -35,8 +35,8 @@ namespace XF.Contatos.View
 				WidthRequest = 960,
 				VerticalOptions = LayoutOptions.FillAndExpand
 			};
-			var stack = new StackLayout { Spacing = 0 };
             map.Pins.Add(pin);
+			var stack = new StackLayout { Spacing = 0 };
 			stack.Children.Add(map);
 			Content = stack;
         }

@@ -5,5 +5,13 @@
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
     x:Class="XF.Contatos.View.MapView"
     Title="Mapa">
+
+    <StackLayout VerticalOptions="FillAndExpand" 
+        HorizontalOptions="FillAndExpand" 
+        Padding="10, 20, 10, 10">
+
+        <maps:Map x:Name="MyMap" IsShowingUser="true" MapType="Street"/>
+        
+    </StackLayout>
     
 </ContentPage>

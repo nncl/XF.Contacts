@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XF.Contatos\XF.Contatos.csproj">
-      <Project>{31a8cddf-6635-444b-8a98-ce8a688d0da3}</Project>
+      <Project>{6B1747A0-F9E9-4B74-84C6-68A5F9F9F28F}</Project>
       <Name>XF.Contatos</Name>
     </ProjectReference>
   </ItemGroup>
